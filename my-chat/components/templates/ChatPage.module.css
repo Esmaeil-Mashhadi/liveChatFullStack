@@ -1,0 +1,312 @@
+.container{
+    width: 100%;
+    height: 100vh;
+    background:linear-gradient(45deg , rgb(1, 43, 56) , rgb(1, 31, 31), rgb(0, 27, 27)) ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.subContainer{
+    width: 750px;
+    height: 600px;
+    box-shadow: 0px 0px 5px aqua;
+    border-radius: 10px;
+    display: flex;
+    background: transparent;
+    color: white;
+}
+
+
+.leftSide{
+    width: 40%;
+    background-color: rgba(54, 100, 115, 0.555);
+    height: 100%;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    overflow-x: hidden;
+
+}
+
+.rightSide{
+    background-color: rgba(7, 79, 84, 0.538);
+    width: 60%;
+    height: 100%;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+.leftHeader{
+    width: fit-content;
+    background-color:rgba(0, 0, 0, 0.177) ;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+
+.leftHeader h3{
+    margin: 20px;
+    display: flex;
+    align-items: center;
+    color: darkcyan;
+}
+
+.leftHeader svg {
+    scale: 2;
+    margin: 20px;
+}
+
+
+.groups {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    margin-top: 20px;
+    gap: 20px;
+}
+.groups img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+.group{
+    display: flex;
+    align-items: center;
+     background-color: rgba(243, 245, 245, 0.156);
+    padding: 10px;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .2s ease;
+    gap: 10px;
+    
+}
+
+
+.group:hover{
+ background-color: rgba(243, 245, 245, 0.512)
+
+}
+
+.rightHeader{
+    width: 100%;
+    height: 65px;
+    background-color:rgba(0, 0, 0, 0.177) ;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.profile svg{
+ width: 50px;
+ scale: 2;
+ color: rgba(7, 176, 164, 0.642);
+}
+
+.profile{
+    font-weight: bold;
+}
+.rightHeader p {
+    display: flex;
+    align-items: center;
+}
+
+.chatInfo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(173, 216, 230, 0.618);
+    color: rgb(1, 62, 62);
+    font-weight: bold;
+}
+.chatText{
+    flex-grow: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    color: black;
+}
+
+.chatText::-webkit-scrollbar{
+    background-color: rgb(4, 70, 70);
+    border-radius: 5px;
+    scroll-behavior: smooth;
+}
+
+.chatText::-webkit-scrollbar-thumb{
+   background-color: rgba(0, 255, 255, 0.662);
+    border-radius: 5px;
+}
+
+.ChatBoxContainer{
+    display: flex;
+    align-items: center;
+    padding-left: 15px;
+    margin: 10px;
+}
+
+.profileChat{
+    display: flex;
+    align-items: center;
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.571);
+    gap: 10px;
+    margin-right: 10px;
+}
+
+.profileChat svg{
+ scale: 1.5;
+}
+
+.send{
+    position: relative;
+    padding: 0px 10px;
+    min-height: 45px;
+    background-color: rgb(69, 143, 168);
+    border-radius: 10px;
+    font-size: 12px;
+    min-width: 70px;
+    max-width: 200px;
+    word-wrap: break-word;
+}
+
+
+.send p span{
+    position: absolute;
+    font-size:10px;
+    height: fit-content;
+    color: rgba(0, 0, 0, 0.495);
+    white-space: nowrap;
+    right: 10px;
+    bottom: 5px;
+}
+
+
+.reply{
+    position: relative;
+    padding: 0px 10px;
+    min-height: 45px;
+    background-color: rgb(113, 129, 135);
+    border-radius: 10px;
+    font-size: 12px;
+    min-width: 70px;
+    max-width: 200px;
+    word-wrap: break-word;
+    margin-right: 15px;
+}
+
+
+.reply p span{
+    position: absolute;
+    font-size:10px;
+    height: fit-content;
+    color: rgba(0, 0, 0, 0.495);
+    white-space: nowrap;
+    right: 10px;
+    bottom: 5px;
+}
+
+
+
+
+@media screen and (max-width:850px) {
+    .subContainer{
+        width: 550px;
+    }
+    .leftHeader{
+        font-size: 12px;
+    }
+    .groups{
+        font-size: 12px;
+    }
+    .rightHeader{
+        font-size: 12px;
+    }
+    .chatInfo{
+        font-size: 12px;
+    }
+    .ChatBoxContainer p{
+        font-size: 10px ;
+    }
+    .ChatBoxContainer p span{
+        font-size: 8px;
+    }
+    .ChatBoxContainer span{
+        font-size: 8px;
+    }
+}
+
+.show{
+    display: none;
+}
+@media screen and (max-width:600px) {
+    .subContainer{
+        position: relative;
+        width: 400px;
+        overflow: hidden;
+    }
+
+    .leftSide{
+        position: absolute;
+        transition: .2s ease;
+        width: 60%;
+        background-color: rgba(51, 91, 105, 0.932);
+        z-index: 2;
+        opacity: var(--opacity);
+        transform: translateX(var(--transform));
+        pointer-events: var(--pointerEvents);
+    }
+    .show{
+        display: block;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+        border: none;
+        background-color: transparent;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        scale: 1.5;
+    }
+
+    .close{
+        display: block;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+        border: none;
+        background-color: transparent;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        scale: 1.5;
+        z-index: 3;
+    }
+    .rightSide{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:400px) {
+    .subContainer{
+        width: 300px;
+    }
+    .leftSide{
+        width: 80%;
+    }
+
+    .leftHeader h3{
+        font-size: 10px;
+    }
+  
+}
+
+@media screen and (max-width:300px) {
+    .subContainer{
+        width: 270px;
+        height: 500px;
+    }
+}

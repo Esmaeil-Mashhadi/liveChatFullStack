@@ -1,0 +1,21 @@
+.bottomRight {
+    display: flex;
+}
+
+.bottomRight textarea{
+    flex-grow: 1;
+    border: none;
+    background-color: lightblue;
+    outline: none;
+    overflow-y: auto;
+    resize: none;
+    padding: 10px;
+}
+
+.bottomRight button{
+    padding: 10px;
+    background-color: rgba(128, 255, 0, 0.625);
+    border: none;
+    cursor: pointer;
+    border-bottom-right-radius: 5px;
+}
