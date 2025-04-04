@@ -22,7 +22,7 @@ module.exports = class Application {
         this.serverConfig()
         this.connectDB()
         this.appConfig()
-        this.initClientSession()
+        // this.initClientSession()
         this.routeHandler()
         this.errorHandling()
     }

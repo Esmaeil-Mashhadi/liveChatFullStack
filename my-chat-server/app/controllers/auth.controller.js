@@ -8,6 +8,7 @@ const { hashPassword, verfiyPassword } = require("../utils/hash&compare");
 class AuthController {
   signUp = async (req, res, next) => {
     try {
+
       const { email, password , userName} = req.body;
 
       if (!email && !password) {
@@ -24,7 +25,6 @@ class AuthController {
         token,
         refreshToken,
       });
-
       if (!user) throw createHttpError.InternalServerError("failed to sign up!");
       res.cookie("authorization", refreshToken, { httpOnly: true , maxAge: 1000 * 60 * 60 *24*7 });
       return res.status(201).json({
@@ -44,7 +44,7 @@ class AuthController {
    
       const user = await userModel.findOne({ email });
       if (!user) throw createHttpError.NotFound("user not found, sign up please");
-      const checkPassword = verfiyPassword(password, user.password);
+      const checkPassword = await verfiyPassword(password, user.password);
       if (!checkPassword) throw createHttpError.BadRequest("user or password is not correct");
       const token = await signAccessToken({ email: user.email  , userName: user.userName});
       const refreshToken =  signRefreshToken({email : user.email , userName : user.userName})
@@ -71,7 +71,7 @@ class AuthController {
     if(!user) throw createHttpError.NotFound("please login first")
     if(exp*1000 < Date.now()) throw createHttpError.Gone()
 
-
+      
     const newToken =  await signAccessToken({email , userName: user.userName})
 
      return res.status(200).json({

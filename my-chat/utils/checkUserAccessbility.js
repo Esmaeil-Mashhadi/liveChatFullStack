@@ -9,6 +9,7 @@ const checkPermission = async (cookies) => {
         method: "POST" , headers:{"Authorization" :`Bearer ${value}`} , credentials:'include'});
       const {data} = await res.json();
       const {token} = data
+      console.log(process.env.USER_SECRET_KEY);
       const {userName , email, exp} = verify(token , process.env.USER_SECRET_KEY)
       if(exp*1000 < Date.now()) throw new Error("token expired")
       return {userName , email}

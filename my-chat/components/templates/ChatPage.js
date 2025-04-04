@@ -176,4 +176,3 @@ const ChatPage = ({removeHandler , userName , email}) => {
 export default ChatPage;
 
 
-// if(item.endpoint == currentInfo.endpoint && item.roomName == currentInfo.roomName){
